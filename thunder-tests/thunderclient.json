@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "1b5bef50-d4a7-47e7-9e56-6840100dcac4",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "2520f090-dffa-421b-9a7f-524c959bdd6a",
+    "name": "Get all divisions",
+    "url": "{{base_url}}/location/divisions",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-07-12T12:21:18.235Z",
+    "modified": "2022-07-12T12:21:32.402Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "43776fa5-8810-4d21-b112-82a48747d2ef",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "2520f090-dffa-421b-9a7f-524c959bdd6a",
+    "name": "Get single division",
+    "url": "{{base_url}}/location/divisions/1",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-07-12T12:22:54.843Z",
+    "modified": "2022-07-12T12:23:13.602Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]

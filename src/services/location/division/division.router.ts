@@ -17,6 +17,7 @@ divisionRouter.get("/", async (request: Request, response: Response) => {
 });
 
 // GET: Get single division
+// Parms: id
 divisionRouter.get("/:id", async (request: Request, response: Response) => {
   const id = parseInt(request.params.id, 10);
 

@@ -1,0 +1,31 @@
+[
+  {
+    "_id": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "colName": "Contact Management",
+    "created": "2022-07-12T12:20:57.483Z",
+    "sortNum": 10000,
+    "folders": [
+      {
+        "_id": "2520f090-dffa-421b-9a7f-524c959bdd6a",
+        "name": "Division",
+        "containerId": "339d8ee9-a494-4b1d-9f04-0893fd67854d",
+        "created": "2022-07-12T12:21:04.947Z",
+        "sortNum": 10000
+      },
+      {
+        "_id": "339d8ee9-a494-4b1d-9f04-0893fd67854d",
+        "name": "Location",
+        "containerId": "",
+        "created": "2022-07-12T12:24:04.729Z",
+        "sortNum": 20000
+      },
+      {
+        "_id": "c9cee105-50ee-4050-9b4f-8ba0b626845e",
+        "name": "District",
+        "containerId": "339d8ee9-a494-4b1d-9f04-0893fd67854d",
+        "created": "2022-07-12T12:24:41.055Z",
+        "sortNum": 30000
+      }
+    ]
+  }
+]
