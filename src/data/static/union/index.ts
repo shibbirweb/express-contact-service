@@ -1,5 +1,6 @@
 import { db } from "../../../utils/database/db.server";
 import * as _unions from "./unions.json";
+import _ from "lodash";
 
 type Union = {
   id: number;
@@ -23,18 +24,18 @@ const formatUnions = (): Union[] => {
 
 export const unions = formatUnions();
 
+// Seed
 export const seedUnions = async () => {
-  await Promise.all(
-    unions.map((union) => {
-      return db.union.create({
-        data: {
-          id: union.id,
-          upzaillaId: union.upazilla_id,
-          nameEn: union.name_en,
-          nameBn: union.name_bn,
-          url: union.url,
-        },
-      });
-    })
-  );
+  for (let i = 0; i < unions.length; i++) {
+    const union = unions[i];
+    await db.union.create({
+      data: {
+        id: union.id,
+        upzaillaId: union.upazilla_id,
+        nameEn: union.name_en,
+        nameBn: union.name_bn,
+        url: union.url,
+      },
+    });
+  }
 };
