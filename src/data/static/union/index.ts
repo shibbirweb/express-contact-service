@@ -1,6 +1,5 @@
 import { db } from "../../../utils/database/db.server";
 import * as _unions from "./unions.json";
-import _ from "lodash";
 
 type Union = {
   id: number;
@@ -31,7 +30,7 @@ export const seedUnions = async () => {
     await db.union.create({
       data: {
         id: union.id,
-        upzaillaId: union.upazilla_id,
+        upazillaId: union.upazilla_id,
         nameEn: union.name_en,
         nameBn: union.name_bn,
         url: union.url,

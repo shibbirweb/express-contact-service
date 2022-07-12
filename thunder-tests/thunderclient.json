@@ -8,7 +8,7 @@
     "method": "GET",
     "sortNum": 10000,
     "created": "2022-07-12T12:21:18.235Z",
-    "modified": "2022-07-12T12:21:32.402Z",
+    "modified": "2022-07-12T14:40:45.040Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -23,6 +23,108 @@
     "sortNum": 20000,
     "created": "2022-07-12T12:22:54.843Z",
     "modified": "2022-07-12T12:23:13.602Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "2340b33c-05c1-4d41-a806-bd83cdf32543",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "c9cee105-50ee-4050-9b4f-8ba0b626845e",
+    "name": "Get all districts",
+    "url": "{{base_url}}/location/districts?divisionId=3",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-07-12T15:18:06.224Z",
+    "modified": "2022-07-12T15:18:43.704Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "divisionId",
+        "value": "3",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "1655393f-c2d8-4e43-849f-3de93abb3a89",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "c9cee105-50ee-4050-9b4f-8ba0b626845e",
+    "name": "Get single district",
+    "url": "{{base_url}}/location/districts/1",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-07-12T15:18:58.617Z",
+    "modified": "2022-07-12T15:19:13.017Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "40fea1dc-d682-4230-8385-e7ba35a86d57",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "3fd11fea-8ef9-4671-b1aa-e59794adb8c4",
+    "name": "Get all upazillas",
+    "url": "{{base_url}}/location/upazillas?districtId=2",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-07-12T15:19:33.106Z",
+    "modified": "2022-07-12T15:20:24.319Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "districtId",
+        "value": "2",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "b949d9f9-a400-41d1-9963-5147c103d99a",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "3fd11fea-8ef9-4671-b1aa-e59794adb8c4",
+    "name": "Get single district",
+    "url": "{{base_url}}/location/districts/1",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-07-12T15:19:33.107Z",
+    "modified": "2022-07-12T15:19:33.106Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "52f6b8e7-6c99-4c9d-9a97-ef440a96b5dd",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "711d2f25-95ab-45a8-92a7-541c091bfdcf",
+    "name": "Get all unions",
+    "url": "{{base_url}}/location/unions?upazillaId=2",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-07-12T15:36:53.321Z",
+    "modified": "2022-07-12T15:37:26.978Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "upazillaId",
+        "value": "2",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "9b5d4935-215b-4ea4-9525-8c435821163e",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "711d2f25-95ab-45a8-92a7-541c091bfdcf",
+    "name": "Get single district",
+    "url": "{{base_url}}/location/unions/1",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-07-12T15:36:53.322Z",
+    "modified": "2022-07-12T15:37:52.767Z",
     "headers": [],
     "params": [],
     "tests": []

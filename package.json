@@ -7,7 +7,7 @@
     "seed": "node --require esbuild-register prisma/seed.ts"
   },
   "scripts": {
-    "dev": "nodemon src/index.ts",
+    "dev": "nodemon src/index.ts --ignore thunder-tests/",
     "seed": "npx prisma db seed",
     "migrate:dev": "npx prisma migrate dev"
   },

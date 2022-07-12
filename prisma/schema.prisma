@@ -18,17 +18,17 @@ enum Gender {
 
 model Union {
   id         Int      @id @default(autoincrement())
-  upzaillaId Int      @map("upazilla_id")
+  upazillaId Int      @map("upazilla_id")
   nameEn     String   @map("name_en")
   nameBn     String   @map("name_bn")
   url        String?
-  upazilla   Upzailla @relation(fields: [upzaillaId], references: [id], onDelete: Cascade)
+  upazilla   Upazilla @relation(fields: [upazillaId], references: [id], onDelete: Cascade)
 
   contacts Contact[]
   @@map("unions")
 }
 
-model Upzailla {
+model Upazilla {
   id         Int      @id @default(autoincrement())
   districtId Int      @map("district_id")
   nameEn     String   @map("name_en")
@@ -50,7 +50,7 @@ model District {
   longitute  String?
   url        String?
   division   Division   @relation(fields: [divisionId], references: [id], onDelete: Cascade)
-  upzaillas  Upzailla[]
+  upazillas  Upazilla[]
 
   contacts Contact[]
   @@map("districts")
@@ -107,7 +107,7 @@ model Speciality {
 model Contact {
   id                    Int       @id @default(autoincrement())
   unionId               Int?      @map("union_id")
-  upzaillaId            Int?      @map("upazilla_id")
+  upazillaId            Int?      @map("upazilla_id")
   districtId            Int?      @map("district_id")
   divisionId            Int?      @map("division_id")
   firstName             String?   @map("first_name")
@@ -128,7 +128,7 @@ model Contact {
   professions  Profession[]
   specialities Speciality[]
   union        Union?       @relation(fields: [unionId], references: [id], onDelete: SetNull)
-  upazilla     Upzailla?    @relation(fields: [upzaillaId], references: [id], onDelete: SetNull)
+  upazilla     Upazilla?    @relation(fields: [upazillaId], references: [id], onDelete: SetNull)
   district     District?    @relation(fields: [districtId], references: [id], onDelete: SetNull)
   division     Division?    @relation(fields: [divisionId], references: [id], onDelete: SetNull)
 

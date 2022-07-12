@@ -3,10 +3,10 @@ import { seedDistricts } from "../src/data/static/district";
 import { seedUpazillas } from "../src/data/static/upazilla";
 import { seedUnions } from "../src/data/static/union";
 
-// seedDivisions();
+seedDivisions();
 
-// seedDistricts();
+seedDistricts();
 
-// seedUpazillas();
+seedUpazillas();
 
 seedUnions();

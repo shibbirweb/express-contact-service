@@ -26,7 +26,7 @@ export const upazillas = formatUpazillas();
 export const seedUpazillas = async () => {
   await Promise.all(
     upazillas.map((upazilla) => {
-      return db.upzailla.create({
+      return db.upazilla.create({
         data: {
           id: upazilla.id,
           districtId: upazilla.distirct_id,
