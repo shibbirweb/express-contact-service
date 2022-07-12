@@ -10,47 +10,43 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// {"id":"1","upazilla_id":"1","name_en":"Subil","name_bn":"সুবিল","url":"subilup.comilla.gov.bd"}
 model Union {
-  id       Int      @id @default(autoincrement())
-  nameEn   String   @map("name_en")
-  nameBn   String   @map("name_bn")
-  url      String?
-  upazilla Upzailla @relation(fields: [upzaillaId], references: [id], onDelete: Cascade)
+  id         Int      @id @default(autoincrement())
+  upzaillaId Int      @map("upazilla_id")
+  nameEn     String   @map("name_en")
+  nameBn     String   @map("name_bn")
+  url        String?
+  upazilla   Upzailla @relation(fields: [upzaillaId], references: [id], onDelete: Cascade)
 
-  upzaillaId Int @map("upazilla_id")
   @@map("unions")
 }
 
-// {"id":"1","district_id":"1","name_en":"Debidwar","name_bn":"দেবিদ্বার","url":"debidwar.comilla.gov.bd"}
 model Upzailla {
-  id       Int      @id @default(autoincrement())
-  nameEn   String   @map("name_en")
-  nameBn   String   @map("name_bn")
-  url      String?
-  district District @relation(fields: [districtId], references: [id], onDelete: Cascade)
+  id         Int      @id @default(autoincrement())
+  districtId Int      @map("district_id")
+  nameEn     String   @map("name_en")
+  nameBn     String   @map("name_bn")
+  url        String?
+  district   District @relation(fields: [districtId], references: [id], onDelete: Cascade)
 
-  unions     Union[]
-  districtId Int     @map("district_id")
+  unions Union[]
   @@map("upazillas")
 }
 
-// {"id":"1","division_id":"1","name_en":"Comilla","name_bn":"কুমিল্লা","latitude":"23.4682747","longitude":"91.1788135","url":"www.comilla.gov.bd"}
 model District {
-  id        Int        @id @default(autoincrement())
-  nameEn    String     @map("name_en")
-  nameBn    String     @map("name_bn")
-  latitude  Decimal?
-  longitute Decimal?
-  url       String?
-  division  Division   @relation(fields: [divisionId], references: [id], onDelete: Cascade)
-  upzaillas Upzailla[]
+  id         Int        @id @default(autoincrement())
+  divisionId Int        @map("division_id")
+  nameEn     String     @map("name_en")
+  nameBn     String     @map("name_bn")
+  latitude   String?
+  longitute  String?
+  url        String?
+  division   Division   @relation(fields: [divisionId], references: [id], onDelete: Cascade)
+  upzaillas  Upzailla[]
 
-  divisionId Int @map("division_id")
   @@map("districts")
 }
 
-//{ "id": "1", "name_en": "Chattagram", "name_bn": "চট্টগ্রাম", "url": "www.chittagongdiv.gov.bd" }
 model Division {
   id     Int     @id @default(autoincrement())
   nameEn String  @map("name_en")
@@ -61,13 +57,14 @@ model Division {
   @@map("divisions")
 }
 
-model User {
-  id        Int      @id @default(autoincrement())
-  name      String   @db.VarChar(191)
-  phone     String   @db.VarChar(20)
-  email     String   @db.VarChar(100)
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
+// model User {
+//   id        Int      @id @default(autoincrement())
+//   name      String
+//   phone     String   @unique @db.VarChar(20)
+//   email     String   @unique @db.VarChar(100)
+//   password  String
+//   createdAt DateTime @default(now()) @map("created_at")
+//   updatedAt DateTime @updatedAt @map("updated_at")
 
-  @@map("users")
-}
+//   @@map("users")
+// }
