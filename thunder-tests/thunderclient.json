@@ -128,5 +128,85 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "9a5e6209-5c48-41e5-b5b1-3690df897afb",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "e78b20a6-8649-483d-bc01-4a31a34d5e6e",
+    "name": "Create",
+    "url": "{{base_url}}/professions",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-07-13T04:40:55.780Z",
+    "modified": "2022-07-13T05:31:19.953Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"Blogger\",\n    \"description\": \"A simple description\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "d25db62a-c6e0-46be-9243-227a547ed23d",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "e78b20a6-8649-483d-bc01-4a31a34d5e6e",
+    "name": "List",
+    "url": "{{base_url}}/professions",
+    "method": "GET",
+    "sortNum": 15000,
+    "created": "2022-07-13T04:48:08.300Z",
+    "modified": "2022-07-13T04:48:37.663Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "165b7b96-0f00-4bfa-a408-d181d29cf410",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "e78b20a6-8649-483d-bc01-4a31a34d5e6e",
+    "name": "Single",
+    "url": "{{base_url}}/professions/1",
+    "method": "GET",
+    "sortNum": 22500,
+    "created": "2022-07-13T04:52:04.253Z",
+    "modified": "2022-07-13T04:52:14.361Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "bd93104f-6f3c-40a7-bece-5ddc990948f5",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "e78b20a6-8649-483d-bc01-4a31a34d5e6e",
+    "name": "Delete",
+    "url": "{{base_url}}/professions/2",
+    "method": "DELETE",
+    "sortNum": 40000,
+    "created": "2022-07-13T04:59:01.283Z",
+    "modified": "2022-07-13T04:59:21.029Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "8050eb0d-c4fc-4ae9-bd14-2066a4edf9d4",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "e78b20a6-8649-483d-bc01-4a31a34d5e6e",
+    "name": "Update",
+    "url": "{{base_url}}/professions/3",
+    "method": "PUT",
+    "sortNum": 35000,
+    "created": "2022-07-13T05:06:41.695Z",
+    "modified": "2022-07-13T05:28:53.784Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"Teacher\",\n    \"description\": \"A simple description\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
