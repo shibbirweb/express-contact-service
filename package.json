@@ -20,14 +20,18 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-validator": "^6.14.2",
-    "http-status-codes": "^2.2.0"
+    "http-status-codes": "^2.2.0",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.30.7"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.13",
     "@types/lodash": "^4.14.182",
+    "@types/multer": "^1.4.7",
     "@types/node": "^18.0.3",
+    "@types/sharp": "^0.30.4",
     "esbuild-register": "^3.3.3",
     "nodemon": "^2.0.19",
     "prisma": "^4.0.0",

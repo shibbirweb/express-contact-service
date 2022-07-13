@@ -333,7 +333,7 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2022-07-13T07:50:28.834Z",
-    "modified": "2022-07-13T09:33:48.173Z",
+    "modified": "2022-07-13T15:36:43.219Z",
     "headers": [],
     "params": [],
     "body": {
@@ -350,51 +350,53 @@
         },
         {
           "name": "districtId",
-          "value": ""
+          "value": "1"
         },
         {
           "name": "divisionId",
-          "value": ""
+          "value": "1"
         },
         {
           "name": "firstName",
-          "value": ""
+          "value": "Shibbir"
         },
         {
           "name": "lastName",
-          "value": ""
-        },
-        {
-          "name": "lastName",
-          "value": ""
+          "value": "Ahmed"
         },
         {
           "name": "nid",
-          "value": ""
-        },
-        {
-          "name": "photo",
-          "value": ""
+          "value": "32165493235"
         },
         {
           "name": "address",
-          "value": ""
+          "value": "Gafargaon"
         },
         {
           "name": "mobileNumberPrimary",
-          "value": ""
+          "value": "01766263681"
         },
         {
           "name": "mobileNumberSecondary",
-          "value": ""
+          "value": "01521416932"
         },
         {
           "name": "email",
-          "value": ""
+          "value": "shibbirweb@gmail.com"
         },
         {
           "name": "gender",
-          "value": ""
+          "value": "Male"
+        },
+        {
+          "name": "dateOfBirth",
+          "value": "1996-01-17"
+        }
+      ],
+      "files": [
+        {
+          "name": "photo",
+          "value": "C:\\Users\\Shibbir Ahmed\\Desktop\\Screenshot 2021-12-25 032431.png"
         }
       ]
     },
