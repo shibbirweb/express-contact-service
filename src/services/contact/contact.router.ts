@@ -12,6 +12,7 @@ import { getUnion } from "../location/union/union.service";
 import { getUpazilla } from "../location/upazilla/upazilla.service";
 import { getDistrict } from "../location/district/district.service";
 import { getDivision } from "../location/division/division.service";
+import { isArray } from "lodash";
 
 // photo upload storage
 const storage = multer.diskStorage({
@@ -116,6 +117,20 @@ contactRouter.post(
         return Promise.reject("division id is not valid.");
       }
       return true;
+    }),
+  body("professionIds")
+    .trim()
+    .customSanitizer((value: string) => {
+      return value.split(",").map((id) => {
+        return parseInt(id, 10);
+      });
+    }),
+  body("specialityIds")
+    .trim()
+    .customSanitizer((value: string) => {
+      return value.split(",").map((id) => {
+        return parseInt(id, 10);
+      });
     }),
   body("firstName").trim().isString(),
   body("lastName").trim().isString(),

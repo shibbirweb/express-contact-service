@@ -1,20 +1,15 @@
 import { db } from "../../utils/database/db.server";
-import type {
-  Contact,
-  Union,
-  Upazilla,
-  District,
-  Division,
-  Profession,
-  Speciality,
-} from "@prisma/client";
+import type { Contact } from "@prisma/client";
 
 type ContactResponse = Omit<
   Contact,
   "createdAt" | "updatedAt" | "deactivatedAt"
 >;
 
-type ContactRequest = Omit<Contact, "id">;
+type ContactRequest = Partial<Omit<Contact, "id">> & {
+  professionIds: number[];
+  specialityIds: number[];
+};
 
 // list
 export const allContacts = (): Promise<ContactResponse[]> => {
@@ -58,7 +53,32 @@ export const createContact = (
     mobileNumberSecondary,
     email,
     gender,
+    professionIds: _professionIds,
+    specialityIds: _spcialityIds,
   } = contact;
+
+  // many to many id type
+  type ManyToManyConnectId = {
+    id: number;
+  };
+
+  // format profession ids
+  const professionIds: ManyToManyConnectId[] = _professionIds.map(
+    (professionId) => {
+      return {
+        id: professionId,
+      };
+    }
+  );
+
+  // format speciality ids
+  const specialityIds: ManyToManyConnectId[] = _spcialityIds.map(
+    (specialityId) => {
+      return {
+        id: specialityId,
+      };
+    }
+  );
 
   return db.contact.create({
     data: {
@@ -76,6 +96,14 @@ export const createContact = (
       mobileNumberSecondary,
       email,
       gender,
+
+      professions: {
+        connect: professionIds,
+      },
+
+      specialities: {
+        connect: specialityIds,
+      },
     },
     select: {
       id: true,

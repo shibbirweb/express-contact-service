@@ -1,6 +1,7 @@
 import express from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
+import morgan from "morgan";
 import { divisionRouter } from "./services/location/division/division.router";
 import { districtRouter } from "./services/location/district/district.router";
 import { upazillaRouter } from "./services/location/upazilla/upazilla.router";
@@ -19,6 +20,7 @@ const port: number = parseInt(process.env.PORT as string, 10);
 
 const app = express();
 
+app.use(morgan("dev")); // only in development environment
 app.use(cors());
 app.use(express.json());
 
