@@ -208,5 +208,92 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "a677938b-88d3-4d99-9366-c663a503c2d5",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "6913ec65-009f-403a-aff1-3c364e6f75c1",
+    "name": "List",
+    "url": "{{base_url}}/specialities",
+    "method": "GET",
+    "sortNum": 15000,
+    "created": "2022-07-13T06:22:47.544Z",
+    "modified": "2022-07-13T07:28:25.872Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "professionId",
+        "value": "3",
+        "isDisabled": true,
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "792f6f39-24a5-438e-89cd-872d81531e9d",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "6913ec65-009f-403a-aff1-3c364e6f75c1",
+    "name": "Single",
+    "url": "{{base_url}}/specialities/1",
+    "method": "GET",
+    "sortNum": 22500,
+    "created": "2022-07-13T06:22:47.545Z",
+    "modified": "2022-07-13T07:09:12.120Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "a143d8da-18e1-4567-862a-16b848ce6ee8",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "6913ec65-009f-403a-aff1-3c364e6f75c1",
+    "name": "Create",
+    "url": "{{base_url}}/specialities",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-07-13T06:22:47.546Z",
+    "modified": "2022-07-13T07:10:34.454Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n   \"name\": \"Backend\",\n   \"professionId\": 1,\n   \"description\": \"This is simple description\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "595b0659-556a-4cbd-9cf3-5b5c9565552b",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "6913ec65-009f-403a-aff1-3c364e6f75c1",
+    "name": "Update",
+    "url": "{{base_url}}/specialities/5",
+    "method": "PUT",
+    "sortNum": 35000,
+    "created": "2022-07-13T06:22:47.547Z",
+    "modified": "2022-07-13T07:23:42.747Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"Designer\",\n    \"professionId\": 1,\n    \"description\": \"A simple description\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "7e2bab60-bd59-42c7-b17f-6e43d36e464e",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "6913ec65-009f-403a-aff1-3c364e6f75c1",
+    "name": "Delete",
+    "url": "{{base_url}}/specialities/4",
+    "method": "DELETE",
+    "sortNum": 40000,
+    "created": "2022-07-13T06:22:47.548Z",
+    "modified": "2022-07-13T07:28:48.929Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]

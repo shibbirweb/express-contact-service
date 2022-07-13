@@ -6,6 +6,7 @@ import { districtRouter } from "./services/location/district/district.router";
 import { upazillaRouter } from "./services/location/upazilla/upazilla.router";
 import { unionRouter } from "./services/location/union/union.router";
 import { professionRoutes } from "./services/profession/profession.router";
+import { specialityRouter } from "./services/speciality/speciality.router";
 
 dotenv.config();
 
@@ -28,6 +29,8 @@ app.use("/api/location/unions", unionRouter);
 
 // profession routes
 app.use("/api/professions", professionRoutes);
+// specilities routes
+app.use("/api/specialities", specialityRouter);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
