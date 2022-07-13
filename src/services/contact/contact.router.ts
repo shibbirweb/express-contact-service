@@ -188,3 +188,29 @@ contactRouter.post(
     }
   }
 );
+
+// GET: Single
+contactRouter.get("/:id", async (request: Request, response: Response) => {
+  const id: number = parseInt(request.params.id, 10);
+  try {
+    const contact = await ContactService.getContact(id);
+    return response.status(StatusCodes.OK).json(contact);
+  } catch (e: any) {
+    return response.status(StatusCodes.INTERNAL_SERVER_ERROR).json(e.message);
+  }
+});
+
+// DELETE: delete contact
+contactRouter.delete("/:id", async (request: Request, response: Response) => {
+  const id: number = parseInt(request.params.id, 10);
+  try {
+    // TODO delete photo
+    await ContactService.deleteContact(id);
+
+    return response
+      .status(StatusCodes.NO_CONTENT)
+      .json("Deleted successfully.");
+  } catch (e: any) {
+    return response.status(StatusCodes.INTERNAL_SERVER_ERROR).json(e.message);
+  }
+});
