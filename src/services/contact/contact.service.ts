@@ -125,6 +125,103 @@ export const createContact = (
   });
 };
 
+// update
+export const updateContact = (
+  contact: ContactRequest,
+  id: number
+): Promise<ContactResponse> => {
+  const {
+    unionId,
+    upazillaId,
+    districtId,
+    divisionId,
+    firstName,
+    lastName,
+    dateOfBirth,
+    nid,
+    photo,
+    address,
+    mobileNumberPrimary,
+    mobileNumberSecondary,
+    email,
+    gender,
+    professionIds: _professionIds,
+    specialityIds: _spcialityIds,
+  } = contact;
+
+  // many to many id type
+  type ManyToManyConnectId = {
+    id: number;
+  };
+
+  // format profession ids
+  const professionIds: ManyToManyConnectId[] = _professionIds.map(
+    (professionId) => {
+      return {
+        id: professionId,
+      };
+    }
+  );
+
+  // format speciality ids
+  const specialityIds: ManyToManyConnectId[] = _spcialityIds.map(
+    (specialityId) => {
+      return {
+        id: specialityId,
+      };
+    }
+  );
+
+  return db.contact.update({
+    where: {
+      id,
+    },
+    data: {
+      unionId,
+      upazillaId,
+      districtId,
+      divisionId,
+      firstName,
+      lastName,
+      dateOfBirth,
+      nid,
+      photo,
+      address,
+      mobileNumberPrimary,
+      mobileNumberSecondary,
+      email,
+      gender,
+
+      professions: {
+        set: [],
+        connect: professionIds,
+      },
+
+      specialities: {
+        set: [],
+        connect: specialityIds,
+      },
+    },
+    select: {
+      id: true,
+      unionId: true,
+      upazillaId: true,
+      districtId: true,
+      divisionId: true,
+      firstName: true,
+      lastName: true,
+      dateOfBirth: true,
+      nid: true,
+      photo: true,
+      address: true,
+      mobileNumberPrimary: true,
+      mobileNumberSecondary: true,
+      email: true,
+      gender: true,
+    },
+  });
+};
+
 // Single
 export const getContact = (id: number): Promise<ContactResponse | null> => {
   return db.contact.findUnique({
