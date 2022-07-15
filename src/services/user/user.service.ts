@@ -34,7 +34,7 @@ export const createUser = async (user: UserRequest): Promise<UserResponse> => {
 };
 
 // get user by email
-export const getUserByEmail = (email: string): Promise<UserResponse | null> => {
+export const getUserByEmail = (email: string): Promise<User | null> => {
   return db.user.findUnique({
     where: {
       email,
@@ -43,7 +43,7 @@ export const getUserByEmail = (email: string): Promise<UserResponse | null> => {
 };
 
 // get user by phone
-export const getUserByPhone = (phone: string): Promise<UserResponse | null> => {
+export const getUserByPhone = (phone: string): Promise<User | null> => {
   return db.user.findUnique({
     where: {
       phone,

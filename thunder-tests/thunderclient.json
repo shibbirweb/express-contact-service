@@ -528,5 +528,24 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "0a0257a1-44be-46a7-bbb9-0eff87bc668d",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "90dcb879-3efa-4e91-a2b3-8bfdf59c40f3",
+    "name": "Login",
+    "url": "{{base_url}}/auth/login",
+    "method": "POST",
+    "sortNum": 60000,
+    "created": "2022-07-15T08:50:44.171Z",
+    "modified": "2022-07-15T09:26:22.859Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"email\": \"shibbirweb@gmail.com\",\n    \"password\": \"password\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
