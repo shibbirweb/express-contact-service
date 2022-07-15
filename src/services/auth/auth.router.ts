@@ -6,6 +6,11 @@ import { StatusCodes } from "http-status-codes";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
+export type JwtPayloadType = {
+  id: number;
+  name: string;
+};
+
 export const authRouter = express.Router();
 
 //POST: Login
@@ -71,29 +76,20 @@ authRouter.post(
           .json("Something went wrong. Try again later.");
       }
 
-      const token = jwt.sign(
-        {
-          id: user.id,
-          name: user.name,
-        },
-        secretToken,
-        {
-          expiresIn: "300s",
-        }
-      );
+      const jwtPayload: JwtPayloadType = {
+        id: user.id,
+        name: user.name,
+      };
+
+      const token = jwt.sign(jwtPayload, secretToken, {
+        expiresIn: "300s",
+      });
 
       // refresh screct token
 
-      const refreshToken = jwt.sign(
-        {
-          id: user.id,
-          name: user.name,
-        },
-        refreshSecretToken,
-        {
-          expiresIn: "1y",
-        }
-      );
+      const refreshToken = jwt.sign(jwtPayload, refreshSecretToken, {
+        expiresIn: "1y",
+      });
 
       const userResponse = {
         user: {

@@ -13,6 +13,7 @@ import { getUpazilla } from "../location/upazilla/upazilla.service";
 import { getDistrict } from "../location/district/district.service";
 import { getDivision } from "../location/division/division.service";
 import { isArray } from "lodash";
+import { authenticateToken } from "./../../middlewares/authenticate.middleware";
 
 // photo upload storage
 const storage = multer.diskStorage({
@@ -51,14 +52,18 @@ const upload = multer({
 export const contactRouter = express.Router();
 
 //GET: list
-contactRouter.get("/", async (request: Request, response: Response) => {
-  try {
-    const contacts = await ContactService.allContacts();
-    return response.status(StatusCodes.OK).json(contacts);
-  } catch (e: any) {
-    return response.status(StatusCodes.INTERNAL_SERVER_ERROR).json(e.message);
+contactRouter.get(
+  "/",
+  authenticateToken,
+  async (request: Request, response: Response) => {
+    try {
+      const contacts = await ContactService.allContacts();
+      return response.status(StatusCodes.OK).json(contacts);
+    } catch (e: any) {
+      return response.status(StatusCodes.INTERNAL_SERVER_ERROR).json(e.message);
+    }
   }
-});
+);
 
 // POST: create
 contactRouter.post(

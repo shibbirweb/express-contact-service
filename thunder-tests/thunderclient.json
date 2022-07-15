@@ -305,8 +305,13 @@
     "method": "GET",
     "sortNum": 15000,
     "created": "2022-07-13T07:50:28.832Z",
-    "modified": "2022-07-13T07:50:44.217Z",
-    "headers": [],
+    "modified": "2022-07-15T10:19:08.626Z",
+    "headers": [
+      {
+        "name": "authorization",
+        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlNoaWJiaXIgQWhtZWQiLCJpYXQiOjE2NTc4ODAxMjB9.GqdaNzzP4QUKJR8RBhQm_3Q4zJSfyAZiqcMkQM2fdRw"
+      }
+    ],
     "params": [],
     "tests": []
   },
