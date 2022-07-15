@@ -509,5 +509,24 @@
       ]
     },
     "tests": []
+  },
+  {
+    "_id": "f70ca9d7-545f-4a79-b3e8-397a78d67a86",
+    "colId": "5d2661ce-636a-4838-bf46-02d8fd8022ae",
+    "containerId": "90dcb879-3efa-4e91-a2b3-8bfdf59c40f3",
+    "name": "Registration",
+    "url": "{{base_url}}/auth/register",
+    "method": "POST",
+    "sortNum": 50000,
+    "created": "2022-07-14T13:36:08.092Z",
+    "modified": "2022-07-15T08:19:16.646Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"Shibbir Ahmed\",\n    \"email\": \"shibbirweb@gmail.com\",\n    \"phone\": \"01766263681\",\n    \"password\": \"password\",\n    \"passwordConfirmation\": \"password\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]

@@ -9,6 +9,7 @@ import { unionRouter } from "./services/location/union/union.router";
 import { professionRoutes } from "./services/profession/profession.router";
 import { specialityRouter } from "./services/speciality/speciality.router";
 import { contactRouter } from "./services/contact/contact.router";
+import { authRouter } from "./services/auth/auth.router";
 
 dotenv.config();
 
@@ -36,6 +37,8 @@ app.use("/api/professions", professionRoutes);
 app.use("/api/specialities", specialityRouter);
 // contact routes
 app.use("/api/contacts", contactRouter);
+// auth routes
+app.use("/api/auth", authRouter);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
